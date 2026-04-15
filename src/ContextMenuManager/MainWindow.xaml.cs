@@ -52,6 +52,8 @@ public partial class MainWindow : Window
     private readonly IRegistryService _registryService;
     private readonly IInstalledAppsService _installedAppsService;
     private readonly ILoggingService _logger;
+    private readonly NewSubmenuService _newSubmenuService;
+    private readonly OpenInCmdService _openInCmdService;
 
     private List<AppDisplayItem> _allApps = new();
     private List<AppDisplayItem> _filteredApps = new();
@@ -66,6 +68,11 @@ public partial class MainWindow : Window
         _logger = App.Services.GetRequiredService<ILoggingService>();
         _registryService = App.Services.GetRequiredService<IRegistryService>();
         _installedAppsService = App.Services.GetRequiredService<IInstalledAppsService>();
+        _newSubmenuService = App.Services.GetRequiredService<NewSubmenuService>();
+        _openInCmdService = App.Services.GetRequiredService<OpenInCmdService>();
+
+        NewMenuToggle.IsChecked = _newSubmenuService.IsSubmenuEnabled();
+        OpenInCmdToggle.IsChecked = _openInCmdService.IsEnabled();
 
         LoadApps();
         
@@ -75,6 +82,80 @@ public partial class MainWindow : Window
     private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
     {
         await Task.Run(() => LoadIconsAsync());
+    }
+
+    private void NewMenuToggle_Click(object sender, RoutedEventArgs e)
+    {
+        try
+        {
+            if (NewMenuToggle.IsChecked == true)
+            {
+                if (_newSubmenuService.EnableSubmenu())
+                {
+                    ShowDialog("Success", "New menu has been added to the context menu!\nRight-click on any folder to see it.", DialogType.Success);
+                }
+                else
+                {
+                    NewMenuToggle.IsChecked = false;
+                    ShowDialog("Error", "Failed to add New menu.", DialogType.Error);
+                }
+            }
+            else
+            {
+                if (_newSubmenuService.DisableSubmenu())
+                {
+                    ShowDialog("Success", "New menu has been removed from the context menu.", DialogType.Success);
+                }
+                else
+                {
+                    NewMenuToggle.IsChecked = true;
+                    ShowDialog("Error", "Failed to remove New menu.", DialogType.Error);
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError($"Error toggling New menu: {ex.Message}");
+            ShowDialog("Error", "Administrator privileges required.", DialogType.Error);
+            NewMenuToggle.IsChecked = !NewMenuToggle.IsChecked;
+        }
+    }
+
+    private void OpenInCmdToggle_Click(object sender, RoutedEventArgs e)
+    {
+        try
+        {
+            if (OpenInCmdToggle.IsChecked == true)
+            {
+                if (_openInCmdService.Enable())
+                {
+                    ShowDialog("Success", "Command Prompt submenu has been added!\nRight-click on any folder or desktop to see it.", DialogType.Success);
+                }
+                else
+                {
+                    OpenInCmdToggle.IsChecked = false;
+                    ShowDialog("Error", "Failed to add Command Prompt.", DialogType.Error);
+                }
+            }
+            else
+            {
+                if (_openInCmdService.Disable())
+                {
+                    ShowDialog("Success", "Command Prompt has been removed from the context menu.", DialogType.Success);
+                }
+                else
+                {
+                    OpenInCmdToggle.IsChecked = true;
+                    ShowDialog("Error", "Failed to remove Command Prompt.", DialogType.Error);
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError($"Error toggling Command Prompt: {ex.Message}");
+            ShowDialog("Error", "Administrator privileges required.", DialogType.Error);
+            OpenInCmdToggle.IsChecked = !OpenInCmdToggle.IsChecked;
+        }
     }
 
     private void LoadIconsAsync()

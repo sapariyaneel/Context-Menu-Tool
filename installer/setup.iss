@@ -2,7 +2,7 @@
 ; Inno Setup Script
 
 #define MyAppName "Context Menu Tool"
-#define MyAppVersion "1.0.0"
+#define MyAppVersion "1.0.1"
 #define MyAppPublisher "Neel Sapariya"
 #define MyAppURL "https://github.com/sapariyaneel"
 #define MyAppExeName "Context Menu Tool.exe"

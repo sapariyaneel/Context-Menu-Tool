@@ -352,7 +352,51 @@
                 </StackPanel>
 
                 <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
-                    <Button x:Name="RefreshBtn" Style="{StaticResource IconBtn}" Content="↻" Click="Refresh_Click" ToolTip="Refresh"/>
+                    <TextBlock Text="New Menu" Foreground="#888888" FontSize="11" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                    <ToggleButton x:Name="NewMenuToggle" Width="44" Height="26" Click="NewMenuToggle_Click" Cursor="Hand">
+                        <ToggleButton.Template>
+                            <ControlTemplate TargetType="ToggleButton">
+                                <Border x:Name="border" Background="#333333" CornerRadius="13" Padding="2">
+                                    <Grid>
+                                        <Ellipse x:Name="thumb" Width="22" Height="22" Fill="#666666" HorizontalAlignment="Left"/>
+                                    </Grid>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsChecked" Value="True">
+                                        <Setter TargetName="border" Property="Background" Value="#2D7D46"/>
+                                        <Setter TargetName="thumb" Property="HorizontalAlignment" Value="Right"/>
+                                        <Setter TargetName="thumb" Property="Fill" Value="#FFFFFF"/>
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="border" Property="Background" Value="#404040"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </ToggleButton.Template>
+                    </ToggleButton>
+                    <TextBlock Text="Command Prompt" Foreground="#888888" FontSize="11" VerticalAlignment="Center" Margin="16,0,8,0"/>
+                    <ToggleButton x:Name="OpenInCmdToggle" Width="44" Height="26" Click="OpenInCmdToggle_Click" Cursor="Hand">
+                        <ToggleButton.Template>
+                            <ControlTemplate TargetType="ToggleButton">
+                                <Border x:Name="border" Background="#333333" CornerRadius="13" Padding="2">
+                                    <Grid>
+                                        <Ellipse x:Name="thumb" Width="22" Height="22" Fill="#666666" HorizontalAlignment="Left"/>
+                                    </Grid>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsChecked" Value="True">
+                                        <Setter TargetName="border" Property="Background" Value="#2D7D46"/>
+                                        <Setter TargetName="thumb" Property="HorizontalAlignment" Value="Right"/>
+                                        <Setter TargetName="thumb" Property="Fill" Value="#FFFFFF"/>
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="border" Property="Background" Value="#404040"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </ToggleButton.Template>
+                    </ToggleButton>
+                    <Button x:Name="RefreshBtn" Style="{StaticResource IconBtn}" Content="↻" Click="Refresh_Click" ToolTip="Refresh" Margin="12,0,0,0"/>
                     <RadioButton x:Name="ListViewBtn" Style="{StaticResource ViewBtn}" Content="☰" Click="ViewToggle_Click" Tag="List" Margin="4,0,0,0"/>
                     <RadioButton x:Name="GridViewBtn" Style="{StaticResource ViewBtn}" Content="⊞" IsChecked="True" Click="ViewToggle_Click" Tag="Grid" Margin="4,0,0,0"/>
                 </StackPanel>
