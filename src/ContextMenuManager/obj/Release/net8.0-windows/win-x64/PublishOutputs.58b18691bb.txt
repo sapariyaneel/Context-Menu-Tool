@@ -1,0 +1,2 @@
+D:\.NET\Context-Menu\publish\Context Menu Tool.pdb
+D:\.NET\Context-Menu\publish\Context Menu Tool.exe

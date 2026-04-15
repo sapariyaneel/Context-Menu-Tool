@@ -1,0 +1,83 @@
+<Window x:Class="ContextMenuManager.UI.EntryDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Add New Entry"
+        Width="480" Height="420"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False">
+
+    <Border CornerRadius="12" Background="#1E1E1E" BorderBrush="#3D3D3D" BorderThickness="1">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Title Bar -->
+            <Border Grid.Row="0" Background="#171717" CornerRadius="12,12,0,0" MouseLeftButtonDown="TitleBar_MouseLeftButtonDown">
+                <Grid>
+                    <TextBlock Text="Add New Entry" Foreground="#FFFFFF" FontSize="13" FontWeight="SemiBold" 
+                              VerticalAlignment="Center" Margin="16,0"/>
+                    <Button Content="✕" HorizontalAlignment="Right" Width="40" Height="32" 
+                           Background="Transparent" Foreground="#888" BorderThickness="0" 
+                           Cursor="Hand" Click="Close_Click"/>
+                </Grid>
+            </Border>
+
+            <!-- Content -->
+            <Grid Grid.Row="1" Margin="24">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Name" Foreground="#AAAAAA" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="0" Grid.Column="1" x:Name="NameBox" Margin="0,0,0,12"
+                        Background="#252525" Foreground="#FFFFFF" BorderBrush="#3D3D3D" 
+                        BorderThickness="1" Padding="12,10" CaretBrush="White"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Display Name" Foreground="#AAAAAA" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="1" Grid.Column="1" x:Name="DisplayNameBox" Margin="0,0,0,12"
+                        Background="#252525" Foreground="#FFFFFF" BorderBrush="#3D3D3D" 
+                        BorderThickness="1" Padding="12,10" CaretBrush="White"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Command" Foreground="#AAAAAA" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="2" Grid.Column="1" x:Name="CommandBox" Margin="0,0,0,12"
+                        Background="#252525" Foreground="#FFFFFF" BorderBrush="#3D3D3D" 
+                        BorderThickness="1" Padding="12,10" CaretBrush="White"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Icon" Foreground="#AAAAAA" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="3" Grid.Column="1" x:Name="IconPathBox" Margin="0,0,0,12"
+                        Background="#252525" Foreground="#FFFFFF" BorderBrush="#3D3D3D" 
+                        BorderThickness="1" Padding="12,10" CaretBrush="White"/>
+
+                <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
+                    <TextBlock Text="Tips:" Foreground="#666666" FontSize="11" FontWeight="SemiBold" Margin="0,0,0,4"/>
+                    <TextBlock Text="• Name: Internal ID (no spaces)" Foreground="#555555" FontSize="11"/>
+                    <TextBlock Text="• Display Name: What users see in menu" Foreground="#555555" FontSize="11"/>
+                    <TextBlock Text="• Command: Optional. Use %1 for file path" Foreground="#555555" FontSize="11"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" 
+                           Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,16,0,0">
+                    <Button Content="Cancel" Click="Cancel_Click" Padding="20,10" 
+                           Background="#2D2D2D" Foreground="#FFFFFF" BorderThickness="0" Cursor="Hand"/>
+                    <Button Content="Save" Click="Save_Click" Padding="20,10" Margin="8,0,0,0"
+                           Background="#0078D4" Foreground="#FFFFFF" BorderThickness="0" Cursor="Hand"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

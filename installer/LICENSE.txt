@@ -1,0 +1,63 @@
+MIT License
+
+Copyright (c) 2026 Neel Sapariya
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+END USER LICENSE AGREEMENT
+
+IMPORTANT: PLEASE READ THIS AGREEMENT CAREFULLY BEFORE INSTALLING OR USING THE SOFTWARE.
+
+By installing, copying, or otherwise using Context Menu Tool ("the Software"), you agree to be bound by the terms of this End User License Agreement ("EULA").
+
+1. LICENSE GRANT
+   Subject to the terms of this EULA, Neel Sapariya ("Licensor") grants you a limited, non-exclusive, non-transferable license to install and use the Software on a single computer.
+
+2. RESTRICTIONS
+   You may not:
+   - Modify, adapt, translate, reverse engineer, decompile, or disassemble the Software
+   - Create derivative works based on the Software
+   - Copy the Software except for backup purposes
+   - Rent, lease, or lend the Software to third parties
+   - Use the Software for any unlawful purpose
+
+3. INTELLECTUAL PROPERTY
+   The Software and all copies thereof are proprietary to the Licensor and title thereto remains exclusively with the Licensor. All rights not specifically granted in this EULA are reserved to the Licensor.
+
+4. DISCLAIMER OF WARRANTY
+   THE SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. THE LICENSOR DOES NOT WARRANT THAT THE SOFTWARE WILL MEET YOUR REQUIREMENTS OR THAT THE OPERATION WILL BE UNINTERRUPTED OR ERROR-FREE.
+
+5. LIMITATION OF LIABILITY
+   TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL THE LICENSOR BE LIABLE FOR ANY SPECIAL, INCIDENTAL, INDIRECT, OR CONSEQUENTIAL DAMAGES WHATSOEVER ARISING OUT OF OR IN ANY WAY RELATED TO YOUR USE OF OR INABILITY TO USE THE SOFTWARE.
+
+6. TERMINATION
+   This EULA is effective until terminated. Your rights under this EULA will terminate automatically without notice if you fail to comply with any of its terms.
+
+7. GOVERNING LAW
+   This EULA shall be governed by and construed in accordance with the laws of India, without regard to its conflict of law provisions.
+
+8. ACKNOWLEDGMENT
+   BY INSTALLING OR USING THE SOFTWARE, YOU ACKNOWLEDGE THAT YOU HAVE READ THIS AGREEMENT, UNDERSTAND IT, AND AGREE TO BE BOUND BY ITS TERMS AND CONDITIONS.
+
+---
+
+For any questions regarding this license, please contact:
+GitHub: https://github.com/sapariyaneel

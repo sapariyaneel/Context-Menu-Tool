@@ -1,0 +1,50 @@
+<Window x:Class="ContextMenuManager.SplashWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Context Menu Tool"
+        Width="400" Height="300"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        Topmost="True">
+
+    <Border Background="#1A1A1A" CornerRadius="12" BorderBrush="#333333" BorderThickness="1">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="30" ShadowDepth="0" Opacity="0.5"/>
+        </Border.Effect>
+        
+        <Grid>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <!-- App Icon -->
+                <Border Width="80" Height="80" CornerRadius="16" Background="#252525" Margin="0,0,0,24">
+                    <Image Source="icon.ico" Width="56" Height="56" 
+                           RenderOptions.BitmapScalingMode="HighQuality"
+                           HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+                
+                <!-- App Name -->
+                <TextBlock Text="Context Menu Tool" FontSize="24" FontWeight="SemiBold" 
+                          Foreground="#FFFFFF" HorizontalAlignment="Center"/>
+                
+                <!-- Tagline -->
+                <TextBlock Text="Manage your Windows context menu" FontSize="12" 
+                          Foreground="#888888" HorizontalAlignment="Center" Margin="0,8,0,0"/>
+                
+                <!-- Loading Indicator -->
+                <ProgressBar IsIndeterminate="True" Width="200" Height="4" 
+                           Foreground="#0078D4" Margin="0,24,0,0"/>
+                <TextBlock Text="Loading..." Foreground="#666666" FontSize="11" 
+                          HorizontalAlignment="Center" Margin="0,12,0,0"/>
+            </StackPanel>
+            
+            <!-- Close hint -->
+            <Button Content="✕" HorizontalAlignment="Right" VerticalAlignment="Top" 
+                   Margin="0,8,8,0" Background="Transparent" Foreground="#555555" 
+                   BorderThickness="0" FontSize="14" Cursor="Hand"
+                   Click="Close_Click"/>
+        </Grid>
+    </Border>
+</Window>
