@@ -1,8 +1,9 @@
 # Build outputs
 bin/
 obj/
-publish/*.exe
-publish/*.pdb
+publish/
+installer/*.exe
+installer/*.pdb
 
 # IDE
 .vs/
