@@ -1,3 +1,4 @@
+using System.IO;
 using System.Windows;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
@@ -24,6 +25,29 @@ public partial class App : Application
     protected override void OnStartup(StartupEventArgs e)
     {
         base.OnStartup(e);
+
+        if (e.Args.Length >= 3 && e.Args[0] == "--create-file")
+        {
+            CreateFileSilently(e.Args[1], e.Args[2]);
+            Shutdown();
+            return;
+        }
+
+        if (e.Args.Length >= 2 && e.Args[0] == "--elevate-cmd")
+        {
+            var path = e.Args.Length > 1 ? e.Args[1] : "";
+            ElevateCmd(path);
+            Shutdown();
+            return;
+        }
+
+        if (e.Args.Length >= 2 && e.Args[0] == "--open-cmd")
+        {
+            var path = e.Args.Length > 1 ? e.Args[1] : "";
+            OpenCmd(path);
+            Shutdown();
+            return;
+        }
         
         if (!IsRunningAsAdmin())
         {
@@ -50,6 +74,84 @@ public partial class App : Application
         splash.Close();
         
         ActivateWindow(mainWindow);
+    }
+
+    private void CreateFileSilently(string dirPath, string extension)
+    {
+        try
+        {
+            var dir = dirPath;
+            if (string.IsNullOrEmpty(dir))
+                dir = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+
+            if (dir.Length == 2 && dir[1] == ':')
+                dir = dir + "\\";
+
+            if (dir.EndsWith("\\"))
+                dir = dir.TrimEnd('\\');
+
+            var filePath = Path.Combine(dir, "New" + extension);
+            if (!File.Exists(filePath))
+                File.WriteAllText(filePath, string.Empty);
+        }
+        catch { }
+    }
+
+    private void ElevateCmd(string dirPath)
+    {
+        try
+        {
+            var dir = dirPath;
+            if (string.IsNullOrEmpty(dir))
+                dir = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+
+            if (dir.Length == 2 && dir[1] == ':')
+                dir = dir + "\\";
+
+            if (dir.EndsWith("\\"))
+                dir = dir.TrimEnd('\\');
+
+            if (!System.IO.Directory.Exists(dir))
+                dir = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+
+            var startInfo = new ProcessStartInfo
+            {
+                UseShellExecute = true,
+                FileName = "cmd.exe",
+                Arguments = $"/k \"cd /d \"{dir}\"\"",
+                Verb = "runas"
+            };
+            Process.Start(startInfo);
+        }
+        catch { }
+    }
+
+    private void OpenCmd(string dirPath)
+    {
+        try
+        {
+            var dir = dirPath;
+            if (string.IsNullOrEmpty(dir))
+                dir = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+
+            if (dir.Length == 2 && dir[1] == ':')
+                dir = dir + "\\";
+
+            if (dir.EndsWith("\\"))
+                dir = dir.TrimEnd('\\');
+
+            if (!System.IO.Directory.Exists(dir))
+                dir = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+
+            var startInfo = new ProcessStartInfo
+            {
+                UseShellExecute = true,
+                FileName = "cmd.exe",
+                Arguments = $"/k \"cd /d \"{dir}\"\""
+            };
+            Process.Start(startInfo);
+        }
+        catch { }
     }
 
     private void ActivateWindow(Window window)

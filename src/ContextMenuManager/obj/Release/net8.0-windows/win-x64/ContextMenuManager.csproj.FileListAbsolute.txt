@@ -490,3 +490,4 @@ D:\.NET\Context-Menu\src\ContextMenuManager\obj\Release\net8.0-windows\win-x64\r
 D:\.NET\Context-Menu\src\ContextMenuManager\obj\Release\net8.0-windows\win-x64\Context Menu Tool.pdb
 D:\.NET\Context-Menu\src\ContextMenuManager\obj\Release\net8.0-windows\win-x64\ContextMenuManager.genruntimeconfig.cache
 D:\.NET\Context-Menu\src\ContextMenuManager\obj\Release\net8.0-windows\win-x64\ref\Context Menu Tool.dll
+D:\.NET\Context-Menu\src\ContextMenuManager\obj\Release\net8.0-windows\win-x64\ContextMenuManager.sourcelink.json

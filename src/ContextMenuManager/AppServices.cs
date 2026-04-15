@@ -15,6 +15,8 @@ public static class AppServices
         services.AddSingleton<IContextMenuService, ContextMenuService>();
         services.AddSingleton<IBackupService, BackupService>();
         services.AddSingleton<IInstalledAppsService, InstalledAppsService>();
+        services.AddSingleton<NewSubmenuService>();
+        services.AddSingleton<OpenInCmdService>();
         
         return services.BuildServiceProvider();
     }
