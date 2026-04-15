@@ -1,6 +1,6 @@
 # Context Menu Tool
 
-![Context Menu Tool](https://img.shields.io/badge/Version-1.0.0-blue)
+![Context Menu Tool](https://img.shields.io/badge/Version-1.0.1-blue)
 ![Platform](https://img.shields.io/badge/Platform-Windows%2010/11-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
@@ -36,9 +36,7 @@ Visual indicators show which apps are already added. Easy to remove entries with
 
 ## Screenshots
 
-<img width="956" height="628" alt="image" src="https://github.com/user-attachments/assets/c8c98a4b-515f-41e7-add0-b0e9a3a191e6" />
-
----
+<img width="845" height="682" alt="Screenshot 2026-04-15 164145" src="https://github.com/user-attachments/assets/f08bf703-08ea-47d6-9e0c-094417bc04c1" />
 
 ## Getting Started
 
