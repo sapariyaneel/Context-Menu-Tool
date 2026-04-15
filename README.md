@@ -36,7 +36,7 @@ Visual indicators show which apps are already added. Easy to remove entries with
 
 ## Screenshots
 
-*[Add screenshots here]*
+<img width="956" height="628" alt="image" src="https://github.com/user-attachments/assets/c8c98a4b-515f-41e7-add0-b0e9a3a191e6" />
 
 ---
 
