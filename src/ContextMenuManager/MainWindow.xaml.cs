@@ -408,18 +408,24 @@ public partial class MainWindow : Window
                 var entryName = SanitizeKeyName(displayName);
                 var uniqueName = GetUniqueEntryName(entryName, type);
 
+                var arg = type switch
+                {
+                    ContextMenuType.File => "%1",
+                    _ => "%V"
+                };
+
                 string actualCommand;
                 if (!string.IsNullOrWhiteSpace(command))
                 {
-                    actualCommand = $"\"{command}\" \"%1\"";
+                    actualCommand = $"\"{command}\" {arg}";
                 }
                 else if (!string.IsNullOrWhiteSpace(iconPath))
                 {
-                    actualCommand = $"\"{iconPath}\" \"%1\"";
+                    actualCommand = $"\"{iconPath}\" {arg}";
                 }
                 else
                 {
-                    actualCommand = "explorer.exe \"%V\"";
+                    actualCommand = $"explorer.exe {arg}";
                 }
 
                 var entry = new ContextMenuEntry
@@ -516,11 +522,17 @@ public partial class MainWindow : Window
 
                     var uniqueName = GetUniqueEntryName(entryName, type);
                     
+                    var arg = type switch
+                    {
+                        ContextMenuType.File => "%1",
+                        _ => "%V"
+                    };
+
                     var entry = new ContextMenuEntry
                     {
                         Name = uniqueName,
                         DisplayName = selectedApp.DisplayName,
-                        Command = $"\"{selectedApp.ExecutablePath}\" \"%1\"",
+                        Command = $"\"{selectedApp.ExecutablePath}\" {arg}",
                         IconPath = selectedApp.ExecutablePath,
                         Type = type,
                         IsEnabled = true

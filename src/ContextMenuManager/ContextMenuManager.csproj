@@ -7,7 +7,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <AssemblyName>Context Menu Tool</AssemblyName>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Authors>Neel Sapariya</Authors>
     <Company>Neel Sapariya</Company>
     <Product>Context Menu Tool</Product>
