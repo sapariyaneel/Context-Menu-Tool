@@ -1,6 +1,6 @@
 # Context Menu Tool
 
-![Context Menu Tool](https://img.shields.io/badge/Version-1.0.1-blue)
+![Context Menu Tool](https://img.shields.io/badge/Version-1.0.2-blue)
 ![Platform](https://img.shields.io/badge/Platform-Windows%2010/11-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
